@@ -1,6 +1,11 @@
-caffe_remix是在hash f19f0f17e711045d25dacb20f9b5ef6d39eb8aad版本上修改的。
+caffe_remix是在hash f19f0f17e711045d25dacb20f9b5ef6d39eb8aad版本上修改的.
+
 1.我们加入了dctr模块对图像进行特征提取
+
 2.我们引入了Guanshuo Xu代码中的内存高效的bn_conv_layer 和 relu_recover_layer.
+
 3.在测试之前，通过在n个训练迭代中进行参数平均，获得更稳定的测试性能（对于运行基于平均值的bn很重要）。请参见solver.cpp中的step（int iters）函数。用法：将solver.protottxt中的use_polyak设置为true，num_iter_polyak。
+
 train文件夹中有我们的网络文件和训练脚本
+
 data_preparation文件夹用于准备数据集。
